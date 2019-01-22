@@ -66,3 +66,18 @@ _, predicted = torch.max(out.data, 1)
 
 error_count = test_target.size - np.count_nonzero((targets == predicted).numpy())
 print('Errors: %d; Accuracy: %d%%' % (error_count, 100 * torch.sum(targets == predicted) / test_target.size))
+
+"""
+The result:
+Epoch 1 Loss: 1.2181
+Epoch 10 Loss: 0.6745
+Epoch 20 Loss: 0.2447
+Epoch 30 Loss: 0.1397
+Epoch 40 Loss: 0.1001
+Epoch 50 Loss: 0.0855
+Errors: 0; Accuracy: 100%
+
+Process finished with exit code 0
+
+Worked. Really fast!
+"""
