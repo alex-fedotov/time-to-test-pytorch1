@@ -7,8 +7,7 @@ import pandas as pd
 
 # Import the pandas dataset from the usual place. Everything as usual.
 
-dataset = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data',
-                      names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'])
+dataset = pd.read_csv('../input/iris.data.csv', names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'])
 
 dataset['species'] = pd.Categorical(dataset['species']).codes
 
@@ -30,7 +29,6 @@ hidden_units = 5
 
 net = torch.nn.Sequential(
     torch.nn.Linear(4, hidden_units),
-    #TODO: try the other
     torch.nn.ReLU(),
     torch.nn.Linear(hidden_units, 3)
 )
