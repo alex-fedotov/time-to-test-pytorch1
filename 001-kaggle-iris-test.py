@@ -29,7 +29,6 @@ hidden_units = 5
 
 net = torch.nn.Sequential(
     torch.nn.Linear(4, hidden_units),
-    #TODO: try the other
     torch.nn.ReLU(),
     torch.nn.Linear(hidden_units, 3)
 )
